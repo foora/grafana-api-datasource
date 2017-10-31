@@ -1,0 +1,6 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-config-foora": "foora/eslint-config-foora"
+  }
+}
