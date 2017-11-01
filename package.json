@@ -1,6 +1,8 @@
 {
   "dependencies": {},
   "devDependencies": {
-    "eslint-config-foora": "foora/eslint-config-foora"
+    "eslint-config-foora": "foora/eslint-config-foora",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0"
   }
 }
