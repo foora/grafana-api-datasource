@@ -1,7 +1,7 @@
 <query-editor-row query-ctrl="ctrl" has-text-edit-mode="true">
     <div class = "gf-form-inline">
         <div class = "gf-form gf-form--grow">
-            <code-editor content = "ctrl.target.queryConfig" ng-blur="ctrl.onChangeInternal()">
+            <code-editor content = "ctrl.target.queryConfig" datasource = "ctrl.datasource" ng-blur="ctrl.onChangeInternal()" data-mode = "json">
             </code-editor>
         </div>
     </div>
