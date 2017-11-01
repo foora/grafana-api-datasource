@@ -6,6 +6,9 @@ export class ApiQueryCtrl extends QueryCtrl {
         this.scope = $scope;
         this.target.queryConfig = this.target.queryConfig || '';
     }
+    onChangeInternal() {
+        this.panelCtrl.refresh(); // Asks the panel to refresh data.
+    }
 }
 
 ApiQueryCtrl.templateUrl = 'partials/query-editor.html';
