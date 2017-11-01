@@ -40,6 +40,14 @@ export class ApiDataSource {
         });
     }
 
+    metricFindQuery() {
+        return {};
+    }
+
+    annotationQuery() {
+        return [];
+    }
+
     doRequest(options) {
         options.withCredentials = this.withCredentials;
         options.headers = this.headers;

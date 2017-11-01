@@ -81,6 +81,16 @@ System.register(['./data_parser'], function (_export, _context) {
                         });
                     }
                 }, {
+                    key: 'metricFindQuery',
+                    value: function metricFindQuery() {
+                        return {};
+                    }
+                }, {
+                    key: 'annotationQuery',
+                    value: function annotationQuery() {
+                        return [];
+                    }
+                }, {
                     key: 'doRequest',
                     value: function doRequest(options) {
                         options.withCredentials = this.withCredentials;

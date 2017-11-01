@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 gulp.task('clean', () => del(['dist']));
 
 gulp.task('copy', ['clean'], () => {
-    return gulp.src('src/**')
+    return gulp.src(['src/**', 'README.md'])
         .pipe(gulp.dest('dist'));
 });
 
