@@ -11,9 +11,9 @@ System.register(['./datasource', './query_ctrl'], function (_export, _context) {
 
     return {
         setters: [function (_datasource) {
-            ApiDataSource = _datasource.default;
+            ApiDataSource = _datasource.ApiDataSource;
         }, function (_query_ctrl) {
-            ApiQueryCtrl = _query_ctrl.default;
+            ApiQueryCtrl = _query_ctrl.ApiQueryCtrl;
         }],
         execute: function () {
             _export('ConfigCtrl', ApiConfigCtrl = function ApiConfigCtrl() {

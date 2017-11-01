@@ -11,7 +11,7 @@ System.register(['./data_parser'], function (_export, _context) {
 
     return {
         setters: [function (_data_parser) {
-            Parser = _data_parser.default;
+            Parser = _data_parser.Parser;
         }],
         execute: function () {
             _createClass = function () {

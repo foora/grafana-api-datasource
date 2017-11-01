@@ -1,5 +1,5 @@
-import ApiDataSource from './datasource';
-import ApiQueryCtrl from './query_ctrl';
+import { ApiDataSource } from './datasource';
+import { ApiQueryCtrl } from './query_ctrl';
 
 class ApiConfigCtrl {}
 ApiConfigCtrl.templateUrl = 'partials/config.html';

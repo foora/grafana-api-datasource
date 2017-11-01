@@ -1,4 +1,4 @@
-import Parser from './data_parser';
+import { Parser } from './data_parser';
 
 export class ApiDataSource {
     constructor(instanceSettings, $q, backendSrv, templateSrv) {
