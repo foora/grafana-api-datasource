@@ -1,0 +1,25 @@
+{
+    "type": "datasource",
+    "name": "JsonFromApi",
+    "id": "grafana-api-datasource",
+    "metrics": true,
+    "annotations": false,
+    "info": {
+        "author": {
+            "name": "foora",
+            "url": "https://github.com/foora"
+        },
+        "description": "grafana-api-datasource",
+        "logos": {
+            "small": "img/logo.svg",
+            "large": "img/logo.svg"
+        },
+        "links": "https://github.com/foora/grafana-api-datasource",
+        "version": "1.0.0",
+        "updated": "2017-10-31"
+    },
+    "dependencies": {
+        "grafanaVersion": "4.5.2",
+        "plugins": []
+    }
+}

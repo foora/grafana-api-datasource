@@ -1,8 +1,17 @@
 {
+  "name": "grafana-api-datasource",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "del": "^3.0.0",
     "eslint-config-foora": "foora/eslint-config-foora",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0"
+    "gulp-babel": "^7.0.0",
+    "gulp-sourcemaps": "^2.6.1"
+  },
+  "scripts": {
+    "build": "gulp"
   }
 }
