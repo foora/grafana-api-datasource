@@ -9,6 +9,9 @@ export class ApiQueryCtrl extends QueryCtrl {
     onChangeInternal() {
         this.panelCtrl.refresh(); // Asks the panel to refresh data.
     }
+    toggleEditorMode() {
+        return;
+    }
 }
 
 ApiQueryCtrl.templateUrl = 'partials/query-editor.html';

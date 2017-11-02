@@ -9,14 +9,14 @@ export class Parser {
         return options;
     }
     parseQueryResponse(res, options) {
-        if (!res) {
+        if (!res.data) {
             return { data: [] };
         }
 
         let format = options.format;
 
         if (format === 'table') {
-            return this.parseTableData(res, options);
+            return this.parseTableData(res.data, options);
         } else {
             return { data: [] };
         }

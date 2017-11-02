@@ -19,7 +19,7 @@ export class ApiDataSource {
     }
 
     query(options) {
-        let queryConfig = this.parser.parseQueryConfig(options.targets.queryConfig);
+        let queryConfig = this.parser.parseQueryConfig(options.targets[0].queryConfig);
         if (Object.keys(queryConfig).length === 0 || !queryConfig.path || !queryConfig.method) {
             return this.q.when({ data: [] });
         }
