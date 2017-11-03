@@ -57,7 +57,7 @@ System.register(['./data_parser'], function (_export, _context) {
                     value: function query(options) {
                         var _this = this;
 
-                        var queryConfig = this.parser.parseQueryConfig(options.targets.queryConfig);
+                        var queryConfig = this.parser.parseQueryConfig(options.targets[0].queryConfig);
                         if (Object.keys(queryConfig).length === 0 || !queryConfig.path || !queryConfig.method) {
                             return this.q.when({ data: [] });
                         }

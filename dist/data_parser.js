@@ -49,14 +49,16 @@ System.register([], function (_export, _context) {
                 }, {
                     key: 'parseQueryResponse',
                     value: function parseQueryResponse(res, options) {
-                        if (!res) {
+                        if (!res.data) {
                             return { data: [] };
                         }
 
                         var format = options.format;
 
                         if (format === 'table') {
-                            return this.parseTableData(res, options);
+                            return this.parseTableData(res.data, options);
+                        } else if (format === 'series') {
+                            return this.parseSeriesData(res.data, options);
                         } else {
                             return { data: [] };
                         }
@@ -87,6 +89,36 @@ System.register([], function (_export, _context) {
                             }
                         }
                         return { data: [result] };
+                    }
+                }, {
+                    key: 'parseSeriesData',
+                    value: function parseSeriesData(data, options) {
+                        if (!(data instanceof Array) || data.length === 0) {
+                            return { data: [] };
+                        }
+                        var lines = options.lines;
+                        if (!lines || !lines.timeKey || !lines.line || lines.line.length === 0) {
+                            return { data: [] };
+                        }
+                        var timeKey = lines.timeKey;
+                        var result = [];
+
+                        var _loop = function _loop(i, len) {
+                            var temp = {
+                                target: lines.line[i].label,
+                                datapoints: []
+                            };
+                            var key = lines.line[i].key;
+                            data.forEach(function (item) {
+                                return temp.datapoints.push([item[key], item[timeKey]]);
+                            });
+                            result.push(temp);
+                        };
+
+                        for (var i = 0, len = lines.line.length; i < len; i++) {
+                            _loop(i, len);
+                        }
+                        return { data: result };
                     }
                 }]);
 

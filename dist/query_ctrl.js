@@ -74,6 +74,11 @@ System.register(['app/plugins/sdk'], function (_export, _context) {
                     value: function onChangeInternal() {
                         this.panelCtrl.refresh(); // Asks the panel to refresh data.
                     }
+                }, {
+                    key: 'toggleEditorMode',
+                    value: function toggleEditorMode() {
+                        return;
+                    }
                 }]);
 
                 return ApiQueryCtrl;
