@@ -8,6 +8,7 @@ the grafana plugin which can get json data from api and parse data to provide fo
 {
     "path": "/api",
     "method": "GET",
+    "query": {} // post body
     "format": "table",
     "columns": [
         {"key": "time", "label": "时间"},
@@ -21,9 +22,10 @@ the grafana plugin which can get json data from api and parse data to provide fo
 {
     "path": "/api",
     "method": "GET",
+    "query": {} // post body
     "format": "series",
     "lines": {
-        "timeKey": 'time',
+        "timeKey": "time",
         "line": [
             {"key": "pv", "label": "pv数"},
             {"key": "uv", "label": "uv数"}

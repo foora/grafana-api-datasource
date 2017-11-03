@@ -61,10 +61,16 @@ System.register(['./data_parser'], function (_export, _context) {
                         if (Object.keys(queryConfig).length === 0 || !queryConfig.path || !queryConfig.method) {
                             return this.q.when({ data: [] });
                         }
-                        return this.doRequest({
+                        var requestOptions = {
                             url: this.url + queryConfig.path,
                             method: queryConfig.method
-                        }).then(function (res) {
+                        };
+                        if (queryConfig.method.toUpperCase() !== 'GET') {
+                            requestOptions.data = queryConfig.query || {};
+                            requestOptions.data.startTime = options.range.from._i;
+                            requestOptions.data.endTime = options.range.to._i;
+                        }
+                        return this.doRequest(requestOptions).then(function (res) {
                             return _this.parser.parseQueryResponse(res, queryConfig);
                         });
                     }
