@@ -17,6 +17,8 @@ export class Parser {
 
         if (format === 'table') {
             return this.parseTableData(res.data, options);
+        } else if (format === 'series') {
+            return this.parseSeriesData(res.data, options);
         } else {
             return { data: [] };
         }
@@ -46,5 +48,26 @@ export class Parser {
             }
         }
         return { data: [result] };
+    }
+    parseSeriesData(data, options) {
+        if (!(data instanceof Array) || data.length === 0) {
+            return { data: [] };
+        }
+        let lines = options.lines;
+        if (!lines || !lines.timeKey || !lines.line || lines.line.length === 0) {
+            return { data: [] };
+        }
+        let timeKey = lines.timeKey;
+        let result = [];
+        for (let i = 0, len = lines.line.length; i < len; i++) {
+            let temp = {
+                target: lines.line[i].label,
+                datapoints: []
+            };
+            let key = lines.line[i].key;
+            data.forEach((item) => temp.datapoints.push([item[key], item[timeKey]]));
+            result.push(temp);
+        }
+        return { data: result };
     }
 }
