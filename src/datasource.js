@@ -29,8 +29,8 @@ export class ApiDataSource {
         };
         if (queryConfig.method.toUpperCase() !== 'GET') {
             requestOptions.data = queryConfig.query || {};
-            requestOptions.data.startTime = options.range.from._i;
-            requestOptions.data.endTime = options.range.to._i;
+            requestOptions.data.startTime = new Date(options.range.from._d).getTime();
+            requestOptions.data.endTime = new Date(options.range.to._d).getTime();
         }
         return this.doRequest(requestOptions).then((res) => this.parser.parseQueryResponse(res, queryConfig));
     }
