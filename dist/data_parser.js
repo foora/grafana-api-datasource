@@ -70,7 +70,7 @@ System.register([], function (_export, _context) {
                             return { data: [] };
                         }
                         var columns = options.columns;
-                        if (columns.length === 0) {
+                        if (!(columns instanceof Array) || columns.length === 0) {
                             return { data: [] };
                         }
                         var result = {
@@ -97,7 +97,7 @@ System.register([], function (_export, _context) {
                             return { data: [] };
                         }
                         var lines = options.lines;
-                        if (!lines || !lines.timeKey || !lines.line || lines.line.length === 0) {
+                        if (!lines || !lines.timeKey || !(lines.line instanceof Array) || lines.line.length === 0) {
                             return { data: [] };
                         }
                         var timeKey = lines.timeKey;
