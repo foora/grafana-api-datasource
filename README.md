@@ -78,4 +78,5 @@ column name 1 | column name 2
     2. line: each data on the data Array will render one line ("key" is the prop name of each data which use for Y-axis, "label" is the line name)
 
 ## test
-- to be written
+- npm run test
+- npm run test-cover

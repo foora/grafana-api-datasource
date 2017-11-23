@@ -1,6 +1,15 @@
 {
   "name": "grafana-api-datasource",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "author": "foora",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foora/grafana-api-datasource.git"
+  },
+  "homepage": "https://github.com/foora/grafana-api-datasource#readme",
+  "bugs": {
+    "url": "https://github.com/foora/grafana-api-datasource/issues"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -9,9 +18,23 @@
     "eslint-config-foora": "foora/eslint-config-foora",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
-    "gulp-sourcemaps": "^2.6.1"
+    "gulp-sourcemaps": "^2.6.1",
+    "jest": "^21.2.1"
   },
   "scripts": {
-    "build": "gulp"
+    "build": "NODE_ENV=production gulp",
+    "test": "NODE_ENV=test jest --forceExit",
+    "test-cover": "NODE_ENV=test jest --forceExit --coverage"
+  },
+  "jest": {
+    "testMatch": [
+      "**/spec/**.test.js"
+    ],
+    "bail": true,
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "text-summary",
+      "lcov"
+    ]
   }
 }

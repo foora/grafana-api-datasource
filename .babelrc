@@ -1,11 +1,26 @@
-{
-    "presets": [
-        [
-            "env",
-            {
-                "modules": "systemjs"
-            }
-        ]
-    ],
-    "plugins": []
+{   
+    "env": {
+        "production": {
+            "presets": [
+                [
+                    "env",
+                    {
+                        "modules": "systemjs"
+                    }
+                ]
+            ],
+            "plugins": []
+        },
+        "test": {
+            "presets": [
+                [
+                    "env",
+                    {
+                        "modules": "commonjs"
+                    }
+                ]
+            ],
+            "plugins": []
+        }
+    }
 }
