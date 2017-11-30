@@ -31,16 +31,16 @@ const backendSrv = {
 
 const RequestFailMock = (options) => {
     return new Promise((resolve, reject) => {
-        // setTimeout(() => {
-        resolve({ status: 500, data: [] });
-        // }, 100);
+        setTimeout(() => {
+            resolve({ status: 500, data: [] });
+        }, 100);
     });
 };
 const RequestSuccessMock = (options) => {
     return new Promise((resolve, reject) => {
-        // setTimeout(() => {
-        resolve({ status: 200, data: [] });
-        // }, 100);
+        setTimeout(() => {
+            resolve({ status: 200, data: [] });
+        }, 100);
     });
 };
 
