@@ -31,16 +31,16 @@ const backendSrv = {
 
 const RequestFailMock = (options) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve({ status: 500, data: [] });
-        }, 100);
+        // setTimeout(() => {
+        resolve({ status: 500, data: [] });
+        // }, 100);
     });
 };
 const RequestSuccessMock = (options) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve({ status: 200, data: [] });
-        }, 100);
+        // setTimeout(() => {
+        resolve({ status: 200, data: [] });
+        // }, 100);
     });
 };
 
@@ -183,14 +183,14 @@ describe('apiDataSource', () => {
         expect(request).toBeInstanceOf(Promise);
     });
 
-    // test('testDatasource Function fail', () => {
-    //     apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestFailMock);
-    //     let request = apiDataSource.testDatasource();
-    //     expect(request).toBeInstanceOf(Promise);
-    //     request.then((result) => {
-    //         expect(result).toBeUndefined();
-    //     });
-    // });
+    test('testDatasource Function fail', () => {
+        apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestFailMock);
+        let request = apiDataSource.testDatasource();
+        expect(request).toBeInstanceOf(Promise);
+        request.then((result) => {
+            expect(result).toBeUndefined();
+        });
+    });
     test('testDatasource Function success', () => {
         apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
         let request = apiDataSource.testDatasource();
