@@ -9,5 +9,5 @@ branches:
 install:
 - npm install
 script:
-- npm run test-cover
+- npm run test
 - npm run build
