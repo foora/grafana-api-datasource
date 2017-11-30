@@ -183,22 +183,22 @@ describe('apiDataSource', () => {
         expect(request).toBeInstanceOf(Promise);
     });
 
-    test('testDatasource Function fail', () => {
-        // apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestFailMock);
-        let request = apiDataSource.testDatasource();
-        expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
-            expect(result).toBeUndefined();
-        });
-    });
-    // test('testDatasource Function success', () => {
-    //     apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
+    // test('testDatasource Function fail', () => {
+    //     apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestFailMock);
     //     let request = apiDataSource.testDatasource();
     //     expect(request).toBeInstanceOf(Promise);
     //     request.then((result) => {
-    //         expect(result).toEqual(testDatasourceResult);
+    //         expect(result).toBeUndefined();
     //     });
     // });
+    test('testDatasource Function success', () => {
+        apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
+        let request = apiDataSource.testDatasource();
+        expect(request).toBeInstanceOf(Promise);
+        request.then((result) => {
+            expect(result).toEqual(testDatasourceResult);
+        });
+    });
 
     test('query Function empty options', () => {
         let request = apiDataSource.query(emptyOptionsQuery);
