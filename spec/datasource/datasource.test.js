@@ -187,7 +187,7 @@ describe('apiDataSource', () => {
         apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestFailMock);
         let request = apiDataSource.testDatasource();
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toBeUndefined();
         });
     });
@@ -195,7 +195,7 @@ describe('apiDataSource', () => {
         apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
         let request = apiDataSource.testDatasource();
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual(testDatasourceResult);
         });
     });
@@ -203,21 +203,21 @@ describe('apiDataSource', () => {
     test('query Function empty options', () => {
         let request = apiDataSource.query(emptyOptionsQuery);
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual({ data: [] });
         });
     });
     test('query Function noPath options', () => {
         let request = apiDataSource.query(noPathOptionsQuery);
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual({ data: [] });
         });
     });
     test('query Function noMethod options', () => {
         let request = apiDataSource.query(noMethodOptionsQuery);
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual({ data: [] });
         });
     });
@@ -225,7 +225,7 @@ describe('apiDataSource', () => {
         apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
         let request = apiDataSource.query(rightGetOptionsQuery);
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual({ data: [] });
         });
     });
@@ -233,7 +233,7 @@ describe('apiDataSource', () => {
         apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
         let request = apiDataSource.query(rightPostOptionsQuery);
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual({ data: [] });
         });
     });
@@ -241,7 +241,7 @@ describe('apiDataSource', () => {
         apiDataSource.backendSrv.datasourceRequest.mockImplementationOnce(RequestSuccessMock);
         let request = apiDataSource.query(rightPostNoQueryOptionsQuery);
         expect(request).toBeInstanceOf(Promise);
-        request.then((result) => {
+        return request.then((result) => {
             expect(result).toEqual({ data: [] });
         });
     });
