@@ -1,5 +1,6 @@
 # grafana-api-datasource
 [![Build Status](https://travis-ci.org/foora/grafana-api-datasource.svg?branch=master)](https://travis-ci.org/foora/grafana-api-datasource)
+[![codecov](https://codecov.io/gh/foora/grafana-api-datasource/branch/master/graph/badge.svg)](https://codecov.io/gh/foora/grafana-api-datasource)
 
 the grafana plugin which can get json data from your backend server api and parse data to provide for penals
 
