@@ -5,12 +5,12 @@ const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('clean', () => del(['dist']));
 
-gulp.task('copy', ['clean'], () => {
+gulp.task('copy', () => {
     return gulp.src(['src/**', 'README.md'])
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('babel', ['copy'], () => {
+gulp.task('babel', () => {
     return gulp.src('dist/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel())
@@ -18,4 +18,4 @@ gulp.task('babel', ['copy'], () => {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['babel']);
+exports.default = gulp.series('clean', 'copy', 'babel')
