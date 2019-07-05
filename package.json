@@ -10,25 +10,28 @@
   "bugs": {
     "url": "https://github.com/foora/grafana-api-datasource/issues"
   },
+  "engines": {
+    "node": "<9"
+  },
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
     "del": "^3.0.0",
     "eslint-config-foora": "foora/eslint-config-foora",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-sourcemaps": "^2.6.1",
-    "jest": "^21.2.1"
+    "jest": "^24.8.0"
   },
   "scripts": {
-    "build": "NODE_ENV=production gulp",
-    "test": "NODE_ENV=test jest --forceExit",
-    "test-cover": "NODE_ENV=test jest --forceExit --coverage"
+    "build": "gulp",
+    "test": "jest --forceExit",
+    "test-cover": "jest --forceExit --coverage"
   },
   "jest": {
     "testMatch": [
-      "**/spec/**.test.js"
+      "**/spec/**/*.test.js"
     ],
     "bail": true,
     "testEnvironment": "node",
