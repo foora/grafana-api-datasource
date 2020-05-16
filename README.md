@@ -4,13 +4,15 @@
 
 the grafana plugin which can get json data from your backend server api and parse data to provide for penals
 
-## testConnect
+## Installation
+- download zip from thie repository and unzip to /var/lib/grafana/plugins
 
+## Documentation
+
+### **testConnect**
 > you must support a GET method api which path is "/test" for grafana to test connecting. the api just need response status 200.
 
-## how to use
-
-### table
+### **use table penal**
 ```
 // query-editor example
 {
@@ -45,7 +47,7 @@ column name 1 | column name 2
 1   | test1
 2   | test2
 
-### series
+### **use series penal**
 ```
 // query-editor example
 {
@@ -80,6 +82,6 @@ column name 1 | column name 2
     1. timeKey: each data need support a timestamp(ms), it is the timestamp's key (timestamp is the X-Axis).
     2. line: each data on the data Array will render one line ("key" is the prop name of each data which use for Y-axis, "label" is the line name)
 
-## test
+## Run tests
 - npm run test
 - npm run test-cover
