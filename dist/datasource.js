@@ -14,9 +14,7 @@ System.register(["./data_parser"], function (_export, _context) {
       Parser = _data_parser.Parser;
     }],
     execute: function () {
-      _export("ApiDataSource", ApiDataSource =
-      /*#__PURE__*/
-      function () {
+      _export("ApiDataSource", ApiDataSource = /*#__PURE__*/function () {
         function ApiDataSource(instanceSettings, $q, backendSrv, templateSrv) {
           _classCallCheck(this, ApiDataSource);
 

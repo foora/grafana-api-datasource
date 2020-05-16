@@ -10,9 +10,6 @@
   "bugs": {
     "url": "https://github.com/foora/grafana-api-datasource/issues"
   },
-  "engines": {
-    "node": "<9.0.0 >8.0.0"
-  },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.5.4",

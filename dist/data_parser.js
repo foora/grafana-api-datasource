@@ -12,9 +12,7 @@ System.register([], function (_export, _context) {
   return {
     setters: [],
     execute: function () {
-      _export("Parser", Parser =
-      /*#__PURE__*/
-      function () {
+      _export("Parser", Parser = /*#__PURE__*/function () {
         function Parser() {
           _classCallCheck(this, Parser);
         }
