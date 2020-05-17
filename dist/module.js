@@ -21,11 +21,7 @@ var _datasource = require("./datasource");
 
 var _query_ctrl = require("./query_ctrl");
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ApiConfigCtrl = function ApiConfigCtrl() {
-  _classCallCheck(this, ApiConfigCtrl);
-};
+class ApiConfigCtrl {}
 
 exports.ConfigCtrl = ApiConfigCtrl;
 ApiConfigCtrl.templateUrl = 'partials/config.html';

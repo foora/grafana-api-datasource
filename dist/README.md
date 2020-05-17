@@ -5,7 +5,8 @@
 the grafana plugin which can get json data from your backend server api and parse data to provide for penals
 
 ## Installation
-- download zip from thie repository and unzip to /var/lib/grafana/plugins
+#### **use grafana-cli**
+> grafana-cli --pluginUrl https://github.com/foora/grafana-api-datasource/archive/v1.0.3.zip plugins install grafana-api-datasource
 
 ## Documentation
 
