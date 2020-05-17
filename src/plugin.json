@@ -20,11 +20,11 @@
                 "url": "https://github.com/foora/grafana-api-datasource"
             }
         ],
-        "version": "1.0.1",
-        "updated": "2017-11-14"
+        "version": "1.0.2",
+        "updated": "2020-5-17"
     },
     "dependencies": {
-        "grafanaVersion": "4.5.2",
+        "grafanaVersion": "6.7.3",
         "plugins": []
     }
 }
