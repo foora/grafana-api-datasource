@@ -1,14 +1,12 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.ApiDataSource = void 0;
 
 var _data_parser = require("./data_parser");
 
-class ApiDataSource {
-  constructor(instanceSettings, $q, backendSrv, templateSrv) {
+var ApiDataSource = /*#__PURE__*/function () {
+  function ApiDataSource(instanceSettings, $q, backendSrv, templateSrv) {
     this.q = $q;
     this.backendSrv = backendSrv;
     this.templateSrv = templateSrv;
@@ -27,7 +25,11 @@ class ApiDataSource {
     this.parser = new _data_parser.Parser();
   }
 
-  query(options) {
+  var _proto = ApiDataSource.prototype;
+
+  _proto.query = function query(options) {
+    var _this = this;
+
     var queryConfig = this.parser.parseQueryConfig(options.targets[0].queryConfig);
 
     if (Object.keys(queryConfig).length === 0 || !queryConfig.path || !queryConfig.method) {
@@ -47,14 +49,16 @@ class ApiDataSource {
       requestOptions.data.endTime = new Date(options.range.to._d).getTime();
     }
 
-    return this.doRequest(requestOptions).then(res => this.parser.parseQueryResponse(res, queryConfig));
-  }
+    return this.doRequest(requestOptions).then(function (res) {
+      return _this.parser.parseQueryResponse(res, queryConfig);
+    });
+  };
 
-  testDatasource() {
+  _proto.testDatasource = function testDatasource() {
     return this.doRequest({
       url: this.url + '/test',
       method: 'GET'
-    }).then(response => {
+    }).then(function (response) {
       if (response.status === 200) {
         return {
           status: 'success',
@@ -63,15 +67,16 @@ class ApiDataSource {
         };
       }
     });
-  }
+  };
 
-  doRequest(options) {
+  _proto.doRequest = function doRequest(options) {
     options.withCredentials = this.withCredentials;
     options.headers = this.headers;
     return this.backendSrv.datasourceRequest(options);
-  }
+  };
 
-}
+  return ApiDataSource;
+}();
 
 exports.ApiDataSource = ApiDataSource;
 //# sourceMappingURL=datasource.js.map

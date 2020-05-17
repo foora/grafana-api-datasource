@@ -1,12 +1,14 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.Parser = void 0;
 
-class Parser {
-  parseQueryConfig(ConfigStr) {
+var Parser = /*#__PURE__*/function () {
+  function Parser() {}
+
+  var _proto = Parser.prototype;
+
+  _proto.parseQueryConfig = function parseQueryConfig(ConfigStr) {
     var options;
 
     try {
@@ -16,9 +18,9 @@ class Parser {
     }
 
     return options;
-  }
+  };
 
-  parseQueryResponse(res, options) {
+  _proto.parseQueryResponse = function parseQueryResponse(res, options) {
     if (!res.data) {
       return {
         data: []
@@ -36,9 +38,9 @@ class Parser {
         data: []
       };
     }
-  }
+  };
 
-  parseTableData(data, options) {
+  _proto.parseTableData = function parseTableData(data, options) {
     if (!(data instanceof Array) || data.length === 0) {
       return {
         data: []
@@ -76,9 +78,9 @@ class Parser {
     return {
       data: [result]
     };
-  }
+  };
 
-  parseSeriesData(data, options) {
+  _proto.parseSeriesData = function parseSeriesData(data, options) {
     if (!(data instanceof Array) || data.length === 0) {
       return {
         data: []
@@ -102,7 +104,9 @@ class Parser {
         datapoints: []
       };
       var key = lines.line[i].key;
-      data.forEach(item => temp.datapoints.push([item[key], item[timeKey]]));
+      data.forEach(function (item) {
+        return temp.datapoints.push([item[key], item[timeKey]]);
+      });
       result.push(temp);
     };
 
@@ -113,9 +117,10 @@ class Parser {
     return {
       data: result
     };
-  }
+  };
 
-}
+  return Parser;
+}();
 
 exports.Parser = Parser;
 //# sourceMappingURL=data_parser.js.map

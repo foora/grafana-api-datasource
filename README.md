@@ -6,7 +6,7 @@ the grafana plugin which can get json data from your backend server api and pars
 
 ## Installation
 #### **use grafana-cli**
-> grafana-cli --pluginUrl https://github.com/foora/grafana-api-datasource/archive/v1.0.2.zip plugins install grafana-api-datasource
+> grafana-cli --pluginUrl https://github.com/foora/grafana-api-datasource/archive/v1.0.4.zip plugins install grafana-api-datasource
 
 ## Documentation
 

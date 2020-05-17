@@ -1,6 +1,6 @@
 {
   "name": "grafana-api-datasource",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "foora",
   "repository": {
     "type": "git",
